@@ -1,6 +1,8 @@
 ﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
+-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
+-- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
 CREATE TABLE "Departments" (
     "dept_no" varchar   NOT NULL,
@@ -22,12 +24,12 @@ CREATE TABLE "Employees" (
      )
 );
 
-CREATE TABLE "Managers" (
+CREATE TABLE "Dep_Managers" (
     "dept_no" varchar   NOT NULL,
     "emp_no" int   NOT NULL,
     "from_date" date   NOT NULL,
     "to_date" date   NOT NULL,
-    CONSTRAINT "pk_Managers" PRIMARY KEY (
+    CONSTRAINT "pk_Dep_Managers" PRIMARY KEY (
         "dept_no"
      )
 );
@@ -62,10 +64,10 @@ CREATE TABLE "Titles" (
      )
 );
 
-ALTER TABLE "Managers" ADD CONSTRAINT "fk_Managers_dept_no" FOREIGN KEY("dept_no")
+ALTER TABLE "Dep_Managers" ADD CONSTRAINT "fk_Dep_Managers_dept_no" FOREIGN KEY("dept_no")
 REFERENCES "Departments" ("dept_no");
 
-ALTER TABLE "Managers" ADD CONSTRAINT "fk_Managers_emp_no" FOREIGN KEY("emp_no")
+ALTER TABLE "Dep_Managers" ADD CONSTRAINT "fk_Dep_Managers_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "Employees" ("emp_no");
 
 ALTER TABLE "Salaries" ADD CONSTRAINT "fk_Salaries_emp_no" FOREIGN KEY("emp_no")

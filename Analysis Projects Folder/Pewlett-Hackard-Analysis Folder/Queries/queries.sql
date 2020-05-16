@@ -185,7 +185,7 @@ FROM dept_manager AS dm
 	INNER JOIN current_emp AS ce
 		ON (dm.emp_no = ce.emp_no);
 		
-SELECT * FROM dept_info;
+SELECT * FROM retirement_info;
 DROP TABLE manager_info;
 
 -- Department Retirees
@@ -217,3 +217,67 @@ WHERE (d.dept_name = 'Sales' OR d.dept_name = 'Development')
 SELECT *
 FROM dept_info
 WHERE dept_name IN ('Sales','Development')
+
+-- table of number of employees about to retired grouped by job title.
+-- Deliverable 1 Step 1
+SELECT ce.emp_no
+, ce.first_name
+, ce.last_name
+, t.title
+, t.from_date
+, s.salary
+INTO retiring_emp
+FROM current_emp AS ce
+INNER JOIN titles AS t
+ON (ce.emp_no = t.emp_no)
+INNER JOIN salaries AS s
+on (ce.emp_no = s.emp_no)
+
+-- Number of employees with each title (historical, including duplicates)
+SELECT count(emp_no), title
+INTO number_of_emp_by_title
+FROM retiring_emp
+GROUP BY title
+ORDER BY title
+
+-- Partition the data to show only most recent title per employee
+SELECT emp_no
+,first_name
+,last_name
+,title
+,from_date
+,salary
+INTO retiring_emp1
+FROM
+ (SELECT emp_no
+,first_name
+,last_name
+,title
+,from_date
+,salary, ROW_NUMBER() OVER
+ (PARTITION BY (emp_no)
+ ORDER BY from_date DESC) rn
+ FROM retiring_emp
+ ) tmp WHERE rn = 1
+ORDER BY emp_no;
+
+DROP TABLE number_of_retiring_by_title
+
+-- Number of retiring employees with each title (no duplicates)
+SELECT count(emp_no), title
+INTO number_of_retiring_by_title
+FROM retiring_emp1
+GROUP BY title
+ORDER BY count(emp_no) DESC
+
+SELECT * FROM number_of_retiring_by_title 
+order by count()
+
+SELECT e.emp_no, e.first_name, e.last_name, t.title, t.from_date, t.to_date
+INTO mentorship
+FROM employees AS e
+INNER JOIN titles AS t
+ON (e.emp_no = t.emp_no)
+WHERE (birth_date BETWEEN '1965-01-01' AND '1965-12-31') AND to_date = '9999-01-01';
+
+SELECT count(emp_no) FROM mentorship
