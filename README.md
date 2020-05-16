@@ -4,8 +4,6 @@
 
 SQL project (Employee Database)
 
-
-<<<<<<< HEAD
 ### **Assiggment**
 
 PH needs to be prepared for the "silver tsunami" approaching soon.  This assignment is to analyse employee data to generate a number of retiring employees by title to understand characteristics of the retirement ready pool of employees, and to identify employees who are elibigle to participate in a mentorship program to future proof PH's workforce.  
@@ -109,6 +107,4 @@ WHERE (birth_date BETWEEN '1965-01-01' AND '1965-12-31') AND to_date = '9999-01-
 ### **Deliverable 2: Mentorship Eligibility**
 
 * A list of current employees born between Jan. 1, 1965 and Dec. 31, 1965: mentorship.csv
-=======
-EmployeeDB.png
->>>>>>> 177ff1f089a7848df91c1678f4a17af901f8c0fd
+
