@@ -39,7 +39,7 @@ ON (ce.emp_no = t.emp_no)</br>
 INNER JOIN salaries AS s</br>
 on (ce.emp_no = s.emp_no);
 
-  Here the number of employees with each title (historical) is quaried by:
+  Here the number of employees with each title (historical) is queried by:
 
 -- Deliverable 1 Step 2: Number of employees with each title (historical, including duplicates)</br>
 
@@ -83,7 +83,7 @@ ORDER BY count(emp_no) DESC;</br>
 
 **2. Mentorship Eligibility**
 
-  One of the measures that PH will take to mitigate the "silver tsunami" is to provide a mentorship program and the employees with a birth date between January 1, 1965 and December 31, 1965 will be eligible to participate.  The following quary was used to create this new table.
+  One of the measures that PH will take to mitigate the "silver tsunami" is to provide a mentorship program and the employees with a birth date between January 1, 1965 and December 31, 1965 will be eligible to participate.  The following query was used to create this new table.
 
 -- Deliverable 2: Mentorship Eligibility</br>
 
