@@ -13,7 +13,7 @@ PH needs to be prepared for the "silver tsunami" approaching soon.  This assignm
 **1. Number of Retiring Employees by Title**
 
     PH mantains the following lists of employee data.
-    ![](https://github.com/hannahc1/Pewlett-Hackard-Analysis/blob/master/EmployeeDB.png)
+![](EmployeeDB.png)
 
     Since not one list of data contains all the infomation we need to provide the anlaysis, the tables need to be "joined" and "grouped by" to produce the relevant imformation.
 
