@@ -95,7 +95,7 @@ ON (e.emp_no = t.emp_no)</br>
 WHERE (birth_date BETWEEN '1965-01-01' AND '1965-12-31') AND to_date = '9999-01-01';</br>
 
 ### **Conclusion**
-  As you can see from the number_of_retiring_by_title table, 33,118 employees are retirement-eligible and the two biggest titles are Senior Engineers and Senior Staff, making up 80% (26,523) of total retirement-eligible employees.  The mentorship program will have a total 1,549 employees eligible to participate.  This data doesn't provide much detail as to which department would suffer most when the "silver tsunami" hits the shore and the pool of mentorship eligible employees are proprotionally represented for the program to be effective. As a follow up analysis, it would be helpful to see the number of the retirement eligible employees and the mentorship eligible employees by departments.
+  As you can see from the number_of_retiring_by_title table, 33,118 employees are retirement-eligible and the two biggest titles are Senior Engineers and Senior Staff, making up 80% (26,523) of total retirement-eligible employees.  The mentorship program will have a total 1,549 employees eligible to participate.  This data doesn't provide much detail as to which department would suffer most when the "silver tsunami" hits the shore, and whether or not the pool of mentorship eligible employees are proprotionally represented for the program to be effective. As a follow up analysis, it would be helpful to see the number of the retirement eligible employees and the mentorship eligible employees by departments.
 
 ---
 
